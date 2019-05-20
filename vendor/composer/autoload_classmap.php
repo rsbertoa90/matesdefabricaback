@@ -44,6 +44,8 @@ return array(
     'App\\Http\\Middleware\\TrimStrings' => $baseDir . '/app/Http/Middleware/TrimStrings.php',
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+    'App\\Http\\Requests\\UserLoginRequest' => $baseDir . '/app/Http/Requests/UserLoginRequest.php',
+    'App\\Http\\Resources\\UserResource' => $baseDir . '/app/Http/Resources/UserResource.php',
     'App\\Jobs\\GeneratePricesList' => $baseDir . '/app/Jobs/GeneratePricesList.php',
     'App\\Jobs\\SaveNewOrder' => $baseDir . '/app/Jobs/SaveNewOrder.php',
     'App\\Mail\\Contacto' => $baseDir . '/app/Mail/Contacto.php',

@@ -38,6 +38,7 @@ Route::get('/csrf','AuthController@csrf');
 
 Route::get('/config','ConfigController@get');
 
+/* ADMIN */
 Route::group(['middleware' => 'CheckAdmin'], function () {
     //
 
@@ -56,6 +57,22 @@ Route::group(['middleware' => 'CheckAdmin'], function () {
     Route::post('/product/image','ProductImageController@create')->middleware('OptimizeImages');
     Route::put('/productImage','ProductImageController@update');
     Route::delete('/product/image/{id}','ProductImageController@destroy');
+
+      Route::get('/lista-de-precios','PdfController@prices');
+
+   /*  Route::get('/busquedas','AdminController@searchHistory'); */
+    
+    /* Route::get('/','AdminController@cotizador'); */
+   /*  Route::get('/cotizador','AdminController@cotizador'); */
+
+    Route::put('/order','OrderController@edit');
+   /*  Route::get('/ordenes','AdminController@orders'); */
+    Route::get('/orders','OrderController@getOrders');
+
+    Route::put('/config','ConfigController@update');
+
 });
+
+ Route::get('/pdf/{order}','OrderController@toPDF');
 
 

@@ -84,25 +84,15 @@ class OrderController extends Controller
     public function getOrders()
     {
         
-        if (Auth::check()){
-
-            $user = Auth::user();
-            if($user->email == "pedidosonline@matesfabi.com")
-            {
-                return Cache::rememberForever('orders',function() use ($user){
-                    return Order::where('user_id',$user->id)
-                        ->with('orderItems.product')
-                        ->get();
-                });
-            }
-            else {
-                return Order::where('user_id',$user->id)
-                            ->with('orderItems.product')
-                            ->get();
+       
+        
+        return Cache::rememberForever('orders',function(){
+            return Order::with('orderItems.product')
+                ->get();
+        });
             
-            }
-                             
-                        
-        }
-    }
+          
+    }           
+        
+    
 }

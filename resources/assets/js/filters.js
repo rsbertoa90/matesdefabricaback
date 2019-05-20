@@ -1,6 +1,5 @@
 import Vue from 'vue';
-import moment from 'moment';
-window.moment = moment;
+
 
 Vue.filter('price', value => {
     if (value % 1 != 0) {
