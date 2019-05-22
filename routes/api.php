@@ -22,6 +22,7 @@ Route::get('/categories','CategoryController@getAll');
 Route::get('/productsNotPaused','CategoryController@productsNotPaused');
 
 Route::get('/metadatas','MetadataController@getAll');
+Route::put('/metadata','MetadataController@update');
 
 Route::get('/states','StateController@get');
 
@@ -38,6 +39,13 @@ Route::get('/csrf','AuthController@csrf');
 
 Route::get('/config','ConfigController@get');
 
+
+Route::post('/contacto','MailController@contacto');
+
+Route::post('/cotizer/send','OrderController@create');
+
+Route::post('/searchHistory','SearchHistoryController@save');
+
 /* ADMIN */
 Route::group(['middleware' => 'CheckAdmin'], function () {
     //
@@ -48,6 +56,8 @@ Route::group(['middleware' => 'CheckAdmin'], function () {
 
     Route::post('/category','CategoryController@create');
     Route::put('/category','CategoryController@update');
+
+     Route::post('/category/image','CategoryController@uploadImage')->middleware('OptimizeImages');
 
 
     Route::post('/product','ProductController@create');
@@ -72,7 +82,5 @@ Route::group(['middleware' => 'CheckAdmin'], function () {
     Route::put('/config','ConfigController@update');
 
 });
-
- Route::get('/pdf/{order}','OrderController@toPDF');
 
 

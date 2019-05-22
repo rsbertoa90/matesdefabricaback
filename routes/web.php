@@ -21,7 +21,7 @@ Route::middleware('CheckSuper')->prefix('super')->group(function(){
 
     Route::get('/', 'SuperController@panel');
 
-    Route::post('/category/image','CategoryController@uploadImage')->middleware('OptimizeImages');
+   
 
     Route::put('/metadata','MetadataController@update');
     Route::get('/products','AdminController@tableView');
@@ -60,25 +60,20 @@ Route::middleware('CheckAdmin')->prefix('admin')->group(function(){
 
 Route::get('/pdf/{order}','OrderController@toPDF');
 
-Route::get('/config','ConfigController@get');
-
 Route::get('/descargar-lista-de-precios','PdfController@downloadPricesList');
 
-Route::get('/', 'HomeController@index')->name('home');
 /* Route::get('/home', function(){return redirect('/');}); */
 /* 
 Route::get('/cotizador','HomeController@cotizer');
 Route::get('/regalos-empresariales','HomeController@regalosEmpresariales'); */
 
-Route::post('/regalos-empresariales','MailController@regalosEmpresariales')->middleware('OptimizeImages');;
+/* Route::post('/regalos-empresariales','MailController@regalosEmpresariales')->middleware('OptimizeImages');; */
 /* 
 Route::get('/franquicia','HomeController@franquicia'); */
-Route::post('/franquicia','MailController@franquicia');
+/* Route::post('/franquicia','MailController@franquicia'); */
 /* 
 Route::get('/sucursales','HomeController@sucursales');
 Route::get('/contacto','HomeController@contacto'); */
-
-Route::post('/contacto','MailController@contacto');
 
 /* Route::get('/buscar','ProductController@searchResults'); */
 
@@ -91,9 +86,6 @@ Auth::routes();
 
 Route::get('/getUser','HomeController@getUser');
 
-Route::post('/cotizer/send','OrderController@create');
-
-Route::post('/searchHistory','SearchHistoryController@save');
 
 Route::post('/suscription','SuscriptionController@create');
 
