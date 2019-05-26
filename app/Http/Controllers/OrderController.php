@@ -52,16 +52,9 @@ class OrderController extends Controller
         $data = $request->except('list');
         $list = $request->list;
 
-        if (Auth::check())
-        {
-            $user = Auth::user();
-        }else 
-        {
-            $user = User::where('email','pedidosonline@matesfabi.com')->get()->first();
-        }
+       
+       
 
-        $data['user_id'] = $user->id;
-        
         Queue::push(new SaveNewOrder($data,$list));
 
         Cache::forget('orders');

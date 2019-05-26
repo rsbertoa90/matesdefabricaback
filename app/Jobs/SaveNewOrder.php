@@ -72,8 +72,10 @@ class SaveNewOrder implements ShouldQueue
             ]);
         }
 
-       if($order->email){
-           MailController::mailOrderToClient($order);
+        if(env('APP_ENV') == 'production'){
+           if($order->email){
+                MailController::mailOrderToClient($order);
+            }
         }
         
 

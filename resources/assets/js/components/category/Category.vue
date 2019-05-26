@@ -149,7 +149,7 @@ export default {
                     return slug === '/'+this.$route.params.category_slug;
                 });
             }
-        },
+        }, 
         metatitle(){
             if (this.category)
             {

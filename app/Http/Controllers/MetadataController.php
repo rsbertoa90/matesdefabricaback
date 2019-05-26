@@ -29,9 +29,8 @@ class MetadataController extends Controller
 
     public function getAll(){
         $pages = ['home',
-                  'cotizador',
-                  'franquicia',
-                  'regalos-empresariales',
+                  'carrito',
+                  'categorias',
                   'contacto',
                   'sucursales'];
         

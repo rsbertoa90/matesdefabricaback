@@ -61,7 +61,7 @@ import shopButton from './shop-button.vue';
 import relatedProducts from './related.vue';
 export default {
     components:{relatedProducts,shopButton},
-     metaInfo(){
+     metaInfo(){ 
         return{
             title:this.metatitle,
             meta: [
