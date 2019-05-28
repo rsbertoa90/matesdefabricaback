@@ -100,10 +100,12 @@ class SinglePageController extends Controller
     
     public function index(request $request) {
         
-    $metadata = $this->resolveMetadata( $request->path() ); 
+   /*  $metadata = $this->resolveMetadata( $request->path() );  */
    
-    return View::make('myapp',compact('metadata'));
-    }
+    /* return View::make('myapp',compact('metadata')); */
+    
+        return "this laravel app works as an API for other web apps. Do not try to access it directly from a browser.";
+}
 
 
 }
