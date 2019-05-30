@@ -36,25 +36,25 @@ Route::middleware('CheckAdmin')->prefix('admin')->group(function(){
     
     /* Route::get('/','AdminController@cotizador'); */
    /*  Route::get('/cotizador','AdminController@cotizador'); */
-
+/* 
     Route::post('/category','CategoryController@create');
-    Route::put('/category','CategoryController@update');
+    Route::put('/category','CategoryController@update'); */
 
-
+/* 
     Route::post('/product','ProductController@create');
     Route::put('/product','ProductController@update');
-    Route::delete('/product/{id}','ProductController@destroy');
+    Route::delete('/product/{id}','ProductController@destroy'); */
     
-    Route::post('/product/image','ProductImageController@create')->middleware('OptimizeImages');
+   /*  Route::post('/product/image','ProductImageController@create')->middleware('OptimizeImages');
     Route::put('/productImage','ProductImageController@update');
-    Route::delete('/product/image/{id}','ProductImageController@destroy');
+    Route::delete('/product/image/{id}','ProductImageController@destroy'); */
 
-    Route::put('/order','OrderController@edit');
+ /*    Route::put('/order','OrderController@edit'); */
    /*  Route::get('/ordenes','AdminController@orders'); */
-    Route::get('/getOrders','OrderController@getOrders');
+  /*   Route::get('/getOrders','OrderController@getOrders');
 
     Route::put('/config','ConfigController@update');
-
+ */
     Route::get('/pdf/{order}','OrderController@toPDF');
 });
 
